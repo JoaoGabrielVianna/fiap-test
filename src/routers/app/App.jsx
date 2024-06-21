@@ -1,9 +1,8 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom';
 
 function App() {
-  return (
-    <div>Welcome to Fiap Test!</div>
-  )
+  return <Outlet />
 }
 
 export default App;
