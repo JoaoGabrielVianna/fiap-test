@@ -1,3 +1,4 @@
+// FaqSection.jsx
 import React from 'react'
 
 const FaqSection = () => {
@@ -39,4 +40,4 @@ const FaqSection = () => {
   )
 }
 
-export default FaqSection
+export default FaqSection;
