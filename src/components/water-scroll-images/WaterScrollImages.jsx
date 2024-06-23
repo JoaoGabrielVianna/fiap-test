@@ -239,7 +239,7 @@ const WaterScrollImages = ({ className = '' }) => {
 
   return (
     <div>
-      <img src={images[currentImageIndex]} alt={`Onda ${currentImageIndex + 1}`} className={className} />
+      <img src={images[currentImageIndex]} className={className} />
     </div>
   );
 };
