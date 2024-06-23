@@ -1,3 +1,4 @@
+// Home.jsx
 import React from 'react';
 
 // Componentes importados
@@ -5,10 +6,10 @@ import Header from '../../components/header/Header';
 import Intro from '../../assets/imgs/intro.png';
 import Marquee from '../../components/marquee/Marquee';
 import WaterScrollImages from '../../components/water-scroll-images/WaterScrollImages';
-
-import './Home.scss';
 import CoursesSection from '../../components/courses-section/CoursesSection ';
 import FaqSection from '../../components/faq-section/FaqSection';
+
+import './Home.scss';
 
 function Home() {
   return (
@@ -54,10 +55,10 @@ function Home() {
       <section>
         <CoursesSection />
       </section>
-      
-    <section>
-      <FaqSection/>
-    </section>
+
+      <section>
+        <FaqSection />
+      </section>
 
     </div>
   );
