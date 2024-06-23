@@ -1,15 +1,20 @@
 .header-container {
   width: 100vw;
   height: 5rem;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   overflow: hidden;
+
   position: fixed;
   top: 0;
   left: 0;
+
   z-index: 5;
+
   background-color: var(--header-background);
 
   .header-wrapper {
@@ -34,47 +39,317 @@
 
 .marquee-container {
   width: 100%;
+  padding: 1rem 0;
+
   display: flex;
   gap: 3rem;
+
   overflow: hidden;
   white-space: nowrap;
-  // background-color: #333;
-  padding: 1rem 0;
-  
-  h1{
+
+
+  h1 {
     font-size: 48px;
     text-transform: uppercase;
     color: #fff;
-  
+
     white-space: 0 6rem;
     letter-spacing: 1px;
-    animation:  8000ms linear infinite;
+    animation: 8000ms linear infinite;
   }
 }
 
+.courses-section-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+
+
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // background-color: green;
+
+    div {
+      h1 {
+        font-size: 5.75rem;
+      }
+
+      p {
+        font-size: 1.375rem;
+        color: var(--color-pink);
+      }
+    }
+
+    nav {
+      ul {
+        display: flex;
+        gap: 6.125rem;
+
+        li {
+          list-style: none;
+          cursor: pointer;
+
+          color: #8A959B;
+
+          position: relative;
+          transition: 0.5s;
+
+          &::before {
+            width: 0%;
+            height: 6px;
+
+            content: "";
+
+            position: absolute;
+            top: -10px;
+            left: 0;
+            transition: .5s;
+            background-color: var(--color-pink);
+          }
+
+          &:hover {
+            color: var(--color-white);
+          }
+
+          &.is-active {
+            color: var(--color-white);
+
+            &::before {
+              width: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .courses-section-content {
+    width: 60%;
+    
+    display: flex;
+    flex-direction: column;
+
+    .categories {
+      display: none;
+      gap: 1rem;
+      flex-direction: column;
+
+      h1 {
+        font-size: 3.438rem;
+        margin: 3rem 0;
+        // background-color: red;
+      }
+
+      div {
+        margin-bottom: 3rem;
+
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        position: relative;
+
+        p {
+          color: rgba(138, 149, 155, 1);
+        }
+
+        :nth-child(1) {
+          font-family: var(--font-pt-sans);
+          // background-color: red;
+        }
+
+        :nth-child(2) {
+          font-family: 'Gotham HTF', sans-serif;
+          font-size: 0.813rem;
+        }
+
+        &::before {
+          width: 100%;
+          height: 1px;
+
+          content: "";
+
+          position: absolute;
+          bottom: -30px;
+          left: 0;
+          transition: .5s;
+          background-color: var(--color-white);
+        }
+      }
+
+      &.visible {
+        display: flex;
+      }
+    }
+  }
+
+  .accordion-mobile {
+    display: none;
+  }
+
+
+}
+
+
 @keyframes move-rtl {
-  0%{
+  0% {
     transform: translateX(0%);
   }
-  100%{
+
+  100% {
     transform: translateX(-100%);
   }
 }
 
 @keyframes move-ltr {
-  0%{
+  0% {
     transform: translateX(-100%);
   }
-  100%{
+
+  100% {
     transform: translateX(-0%);
   }
 }
 
 
+// Estilos para dispositivos móveis com largura máxima de 900px
 @media(max-width: 900px) {
-  .header-container {
-    .header-wrapper {
-      img {}
+  .courses-section-container {
+    width: 95%;
+    gap: 3rem;
+    justify-content: start;
+
+    header {
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        h1 {
+          font-size: 3.875rem;
+        }
+      }
+
+      nav {
+        display: none;
+      }
     }
+
+    .courses-section-content {
+      display: none;
+    }
+
+    .accordion-mobile {
+      // background-color: red;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .accordion-item {
+        header {
+          display: flex;
+
+          h1 {
+            font-size: 1.875rem;
+            font-weight: 500;
+            letter-spacing: -3%;
+            line-height: 30px;
+            padding: 2rem 0;
+          }
+
+          button {
+            width: 50px;
+            height: 50px;
+
+            border-radius: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 1.5rem;
+
+            color: white;
+            cursor: pointer;
+
+            position: relative;
+
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+
+            &::before,
+            &::after {
+              width: 50%;
+              height: 6px;
+              content: '';
+
+              position: absolute;
+
+              transition: transform 0.3s ease;
+              background-color: var(--color-pink);
+            }
+
+            &::before {
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+
+            &::after {
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%) rotate(90deg);
+            }
+
+            &.minus::before {
+              transform: translate(-50%, -50%) rotate(180deg);
+              z-index: 1;
+              background-color: black;
+            }
+
+            &.minus::after {
+              transform: translate(-50%, -50%) rotate(270deg);
+              background-color: var(--color-pink);
+            }
+
+            &.plus {
+              background-color: var(--color-black);
+              border-color: var(--color-pink);
+            }
+
+            &.minus {
+              border: 1px solid var(--color-pink);
+              background-color: var(--color-pink);
+            }
+          }
+
+        }
+
+        .accordion-content {
+          display: flex;
+          flex-direction: column;
+
+
+          .accordion-description {
+            padding: 2rem 0;
+            border-top: 1px solid var(--color-white);
+
+            :nth-child(1) {
+              color: rgba(138, 149, 155, 1);
+            }
+
+            :nth-child(2) {
+              font-family: var(--font-pt-sans);
+            }
+          }
+        }
+
+        // background-color: green;
+      }
+    }
+
+
   }
 }
