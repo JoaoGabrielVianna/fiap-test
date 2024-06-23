@@ -1,5 +1,5 @@
+// Marquee.jsx
 import React from 'react'
-import '../Styles.scss'
 
 const Marquee = ({ text = 'Texto Exemplo', direction = 'rtl', mode = 1 }) => {
   const Style = {
@@ -14,9 +14,9 @@ const Marquee = ({ text = 'Texto Exemplo', direction = 'rtl', mode = 1 }) => {
     ...(mode === 2 && {
       borderBottom: '0px',
       color: 'transparent',
-      WebkitTextStrokeWidth: '1px', // Convertido para camelCase
-      WebkitTextStrokeColor: '#fff', // Convertido para camelCase
-    }), // Adicione outras propriedades aqui conforme necessário
+      WebkitTextStrokeWidth: '1px',
+      WebkitTextStrokeColor: '#fff',
+    }),
 
   }
 
@@ -28,4 +28,4 @@ const Marquee = ({ text = 'Texto Exemplo', direction = 'rtl', mode = 1 }) => {
   )
 }
 
-export default Marquee
+export default Marquee;
