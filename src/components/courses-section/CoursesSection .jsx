@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+// CoursesSection.jsx
+import React, { useState } from 'react';
 
 const CoursesSection = () => {
-  const [isActive, setActiveState] = useState(0); // Estado inicial para o primeiro item
-  const [activeCategory, setActiveCategory] = useState(null); // Estado inicial para nenhum item ativo
+  const [isActive, setActiveState] = useState(0);
+  const [activeCategory, setActiveCategory] = useState(null);
 
   const handleItemClick = (e) => {
     setActiveState(e)
@@ -10,9 +11,9 @@ const CoursesSection = () => {
 
   const toggleAccordion = (index) => {
     if (activeCategory === index) {
-      setActiveCategory(null); // Fecha o accordion se já estiver aberto
+      setActiveCategory(null);
     } else {
-      setActiveCategory(index); // Abre o accordion correspondente ao index
+      setActiveCategory(index);
     }
   };
 
