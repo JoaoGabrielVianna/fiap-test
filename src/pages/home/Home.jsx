@@ -56,6 +56,7 @@ function Home() {
         <CoursesSection />
       </section>
 
+      {/* Seção 7 - FAQ */}
       <section>
         <FaqSection />
       </section>
