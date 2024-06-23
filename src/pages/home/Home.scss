@@ -17,10 +17,10 @@
           position: relative;
 
           h1 {
+            font-size: 6.875rem;
             z-index: 2;
             position: relative;
             line-height: 0.8;
-
             &.a-melhor-faculdade {
               transform: translateX(2%);
             }
@@ -55,9 +55,15 @@
       }
     }
 
+    &:nth-of-type(2) {
+
+      h1 {
+        font-size: 5.188rem;
+      }
+    }
+
     // Seção 3 - Imagem de Introdução
     &:nth-of-type(3) {
-      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -69,15 +75,23 @@
 
     // Ajuste de posição para a seção 4
     &:nth-of-type(4) {
-      transform: translateY(-130%);
+      margin-top: -16rem;
+
+      h1 {
+        font-size: 9rem;
+      }
     }
 
     // Seção 5 - Animação de Imagens com Scroll de Água
     &:nth-of-type(5) {
-      height: 100vh;
+      height: 54.188rem;
       display: flex;
       align-items: center;
       justify-content: center;
+
+      .water {
+        // opacity: .5;
+      }
     }
 
     // Seção 6 - Cursos
@@ -86,16 +100,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-
     }
 
-     // Seção 7 - Faq
-     &:nth-of-type(7) {
-      // height: 700px;
+    // Seção 7 - Faq
+    &:nth-of-type(7) {
       display: flex;
-      // align-items: center;
       justify-content: center;
-
     }
   }
 }
@@ -104,7 +114,7 @@
 @media(min-width: 1920px) {
   .home-container {
     max-width: 1920px;
-
+   
     section {
 
       // Seção 1 - Título Principal: A Melhor Faculdade de Tecnologia
@@ -140,19 +150,21 @@
 
       // Seção 3 - Imagem de Introdução
       &:nth-of-type(3) {
-        height: 70vh;
+        // height: 70vh;
       }
 
       // Seção 4 - Marquee (Letreiro)
       &:nth-of-type(4) {
-        transform: translateY(-100%);
+
         // background-color: red;
         // Estilos específicos para seção 4 podem ser adicionados aqui
       }
 
       // Seção 5 - Animação de Imagens com Scroll de Água
       &:nth-of-type(5) {
-        height: 41vh;
+        height: 70rem;
+        // background-color: red;
+
       }
     }
   }
@@ -162,7 +174,7 @@
 @media (max-width: 1920px) {
   .home-container {
     max-width: 1536px;
-
+    
     section {
 
       // Seção 1 - Título Principal: A Melhor Faculdade de Tecnologia

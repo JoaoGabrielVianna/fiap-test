@@ -222,7 +222,7 @@ const WaterScrollImages = ({ className = '' }) => {
   const handleScroll = () => {
     const scrollTop = window.pageYOffset;
     const maxScrollTop = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollFraction = (scrollTop - (maxScrollTop / 2)) / (maxScrollTop / 2); //scrollTop / maxScrollTop;
+    const scrollFraction = ((scrollTop - (maxScrollTop / 2)) / (maxScrollTop / 2)) * 2; //scrollTop / maxScrollTop;
     const newImageIndex = Math.min(
       images.length - 1,
       Math.floor(scrollFraction * images.length)
@@ -240,6 +240,7 @@ const WaterScrollImages = ({ className = '' }) => {
   return (
     <div>
       <img src={images[currentImageIndex]} className={className} />
+      {/* <img src={images[190]} className={className} /> */}
     </div>
   );
 };
