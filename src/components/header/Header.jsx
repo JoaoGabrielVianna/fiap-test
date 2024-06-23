@@ -1,9 +1,9 @@
+// Header.jsx
 import React, { useEffect, useState } from 'react'
 
 // Svg
 import FiapLogo from '../../assets/svgs/logo-fiap.svg'
 
-import '../Styles.scss'
 
 const Header = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
