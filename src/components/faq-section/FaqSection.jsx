@@ -32,7 +32,7 @@ const FaqSection = () => {
           <p>Não. Os materiais utilizados em sala de aula são fornecidos pela FIAP e as aulas mais técnicas são realizadas em nossos próprios laboratórios. Sugerimos somente que traga o que preferir para suas anotações.</p>
         </div>
         <div className='card'>
-          h1VOU RECEBER CERTIFICADO DE CONCLUSÃO DE CURSO?
+          <h1>VOU RECEBER CERTIFICADO DE CONCLUSÃO DE CURSO?</h1>
           <p>Sim. Ao cumprir pelo menos 75% da carga horária do curso, você receberá um Certificado Digital, que poderá ser acessado na plataforma.</p>
         </div>
       </div>
