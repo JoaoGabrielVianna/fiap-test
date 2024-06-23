@@ -7,6 +7,7 @@ import App from './routers/app/App'
 import Home from './pages/home/Home'
 
 import './index.scss'
+import './components/Styles.scss'
 
 const router = createBrowserRouter([{
   path: '/',
