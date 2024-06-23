@@ -1,0 +1,284 @@
+.home-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  section {
+
+    // Seção 1 - Título Principal: A Melhor Faculdade de Tecnologia
+    &:nth-of-type(1) {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .section-wrapper {
+        .title {
+          position: relative;
+
+          h1 {
+            z-index: 2;
+            position: relative;
+            line-height: 0.8;
+
+            &.a-melhor-faculdade {
+              transform: translateX(2%);
+            }
+
+            &:nth-child(2) {
+              transform: translateX(-5%);
+            }
+          }
+
+          .about {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -15%);
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            h1 {
+              font-weight: 800;
+              z-index: 0;
+              position: relative;
+              text-align: center;
+              color: rgba(11, 12, 13, 1);
+
+              br {
+                display: flex;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // Seção 3 - Imagem de Introdução
+    &:nth-of-type(3) {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 70%;
+      }
+    }
+
+    // Ajuste de posição para a seção 4
+    &:nth-of-type(4) {
+      transform: translateY(-130%);
+    }
+
+    // Seção 5 - Animação de Imagens com Scroll de Água
+    &:nth-of-type(5) {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    // Seção 6 - Cursos
+    &:nth-of-type(6) {
+      height: 700px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+     // Seção 7 - Faq
+     &:nth-of-type(7) {
+      // height: 700px;
+      display: flex;
+      // align-items: center;
+      justify-content: center;
+
+    }
+  }
+}
+
+// Estilos para notebook com resolução 1920x1080 (100%)
+@media(min-width: 1920px) {
+  .home-container {
+    max-width: 1920px;
+
+    section {
+
+      // Seção 1 - Título Principal: A Melhor Faculdade de Tecnologia
+      &:nth-of-type(1) {
+        height: 1080px;
+        transform: translateY(-1rem);
+
+        .section-wrapper {
+          .title {
+            transform: translateY(3rem);
+
+            h1 {
+              font-size: 6.875rem;
+            }
+
+            .about {
+              h1 {
+                font-size: 21.875rem;
+
+                br {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // Seção 2 - Marquee (Letreiro)
+      &:nth-of-type(2) {
+        // Estilos específicos para seção 2 podem ser adicionados aqui
+      }
+
+      // Seção 3 - Imagem de Introdução
+      &:nth-of-type(3) {
+        height: 70vh;
+      }
+
+      // Seção 4 - Marquee (Letreiro)
+      &:nth-of-type(4) {
+        transform: translateY(-100%);
+        // background-color: red;
+        // Estilos específicos para seção 4 podem ser adicionados aqui
+      }
+
+      // Seção 5 - Animação de Imagens com Scroll de Água
+      &:nth-of-type(5) {
+        height: 41vh;
+      }
+    }
+  }
+}
+
+// Estilos para notebook com resolução 1920x1080 (125%)
+@media (max-width: 1920px) {
+  .home-container {
+    max-width: 1536px;
+
+    section {
+
+      // Seção 1 - Título Principal: A Melhor Faculdade de Tecnologia
+      &:nth-of-type(1) {
+        height: 100vh;
+
+        .section-wrapper {
+          .title {
+            h1 {
+              font-size: 4.5rem;
+            }
+
+            .about {
+              h1 {
+                font-size: 16rem;
+
+                br {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Estilos para dispositivos móveis com largura máxima de 900px
+@media(max-width: 900px) {
+  .home-container {
+
+    section {
+
+      // Seção 1 - Título Principal: A Melhor Faculdade de Tecnologia
+      &:nth-of-type(1) {
+        height: 35rem;
+
+        .section-wrapper {
+          .title {
+            width: 100%;
+
+            h1 {
+              font-size: 2rem;
+            }
+
+            .about {
+              h1 {
+                top: 0%;
+                transform: translateY(-25%);
+                font-size: 9.375rem;
+                text-align: end;
+
+                br {
+                  display: flex;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &:nth-of-type(2) {
+        // background-color: red;
+      }
+
+      // Seção 3 - Imagem de Introdução
+      &:nth-of-type(3) {
+        display: none;
+      }
+
+      // Seção 4 - Marquee (Letreiro)
+      &:nth-of-type(4) {
+        display: none;
+      }
+
+      // Seção 5 - Animação de Imagens com Scroll de Água
+      &:nth-of-type(5) {
+        display: none;
+      }
+
+      &:nth-of-type(6) {
+        padding-top: 3rem;
+        align-items: start;
+      }
+    }
+  }
+}
+
+// Estilo para o componente WaterScrollImages
+.water {
+  width: 100%;
+}
+
+// Estilos para a barra de rolagem personalizada
+.home-container {
+  ::-webkit-scrollbar-thumb {
+    background: red;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: darkred;
+  }
+
+  /* Estilizar o scrollbar no Firefox */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: red;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: darkred;
+  }
+}
