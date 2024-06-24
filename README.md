@@ -10,29 +10,85 @@ Este projeto é uma landing page desenvolvida como parte da prova para a posiç�
 - [Instalação](#instalação)
 - [Uso](#uso)
 - [Funcionalidades](#funcionalidades)
+- [Melhorias](#melhorias)
 - [Autor](#autor)
 
 ## Visão Geral
 
-A landing page foi projetada para ser responsiva e incluir uma animação no cabeçalho, onde uma borda cresce da esquerda para a direita conforme a página é rolada. A página também utiliza uma fonte personalizada.
+A landing page foi projetada para ser responsiva e incluir algumas animações, como:
+
+- **Header**
+  - Uma animação no cabeçalho, onde uma borda cresce da esquerda para a direita conforme a página é rolada.
+- **Intro**
+  - Um `marquee` onde o texto vai da esquerda para a direita automaticamente, independente da página ser rolada.
+  - Uma animação para a imagem (intro) que aparece de cima para baixo, de acordo com a posição x da página.
+  - Um segundo `marquee` onde o texto vai da esquerda para a direita conforme a página é rolada.
+- **Water**
+  - Uma animação de imagens, onde conforme a página é rolada para baixo troca a imagem por outra, como se fossem os `frames` de um vídeo.
+- **Cursos**
+  - Uma animação na navegação entre os cursos, onde o tipo de curso, quando selecionado, fica com uma borda no topo mostrando que foi selecionado.
+- **Faq**
+  - Uma animação é exibida quando o mouse/dedo é passado em cima dos cards, revelando o conteúdo da pergunta.
 
 ## Tecnologias Utilizadas
 
 - **ReactJS**: Biblioteca JavaScript para construir interfaces de usuário.
 - **Vite**: Ferramenta de build rápida e leve para projetos modernos de front-end.
-- **CSS**: Folhas de estilo em cascata para estilização.
+- **SCSS**: Linguagem de extensão do CSS que permite o uso de variáveis, aninhamento e mais.
 - **HTML**: Linguagem de marcação para estruturação da página.
 
 ## Estrutura do Projeto
 
 ```plaintext
-my-react-app/
+Prova Fiap/
+├── node_modules/
 ├── public/
+│   └── favicon.ico
 ├── src/
-├── .gitignore
+│   ├── assets/
+│   │   ├── fonts/
+│   │   │   ├── gotham/
+│   │   │   └── gotham.css
+│   │   ├── imgs/
+│   │   │   ├── water/
+│   │   │   │   ├── index.jsx
+│   │   │   │   ├── [...]
+│   │   │   └── intro.png
+│   │   ├── svgs/
+│   │   │   └── logo-fiap.svg
+│   ├── components/
+│   │   ├── courses-section/
+│   │   │   └── courses-section.jsx
+│   │   ├── faq-section/
+│   │   │   └── faq-section.jsx
+│   │   ├── footer/
+│   │   │   └── footer.jsx
+│   │   ├── header/
+│   │   │   └── header.jsx
+│   │   ├── marquee/
+│   │   │   └── marquee.jsx
+│   │   ├── text-typer/
+│   │   │   └── TextTyper.jsx
+│   │   ├── water-scroll-images/
+│   │   │   └── WaterScrollImages.jsx
+│   │   └── Styles.scss
+│   ├── pages/
+│   │   └── home/
+│   │       ├── Home.jsx
+│   │       └── Home.scss
+│   ├── routers/
+│   │   └── app/
+│   │       └── App.jsx
+│   ├── index.scss
+│   └── main.jsx
 ├── package.json
-├── README.md
-```
+├── .eslintrc.cjs
+├── vite.config.js
+├── .gitignore
+├── index.html
+├── package-lock.json
+└── README.md
+
 
 ## Instalação
 
@@ -40,13 +96,14 @@ Siga os passos abaixo para rodar o projeto localmente:
 
 - **Clone o repositório:**:
 ```bash
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
-cd nome-do-repositorio
+git clone https://github.com/JoaoGabrielVianna/fiap-test.git
+cd fiap-test
 ```
 
 - **Instale as dependências:**
 ```bash
 npm install
+npm react-router-dom
 ```
 
 - **Inicie o servidor de desenvolvimento:**
@@ -65,9 +122,16 @@ A landing page inclui um cabeçalho animado e é estilizada com uma fonte person
 
 ## Funcionalidades
 
-- **Animação no Cabeçalho**: Uma borda que cresce da esquerda para a direita quando a página é rolada.
 - **Fonte Personalizada**: Utilização da fonte "Gotham HTF" com diferentes pesos para estilização.
 - **Responsividade**: Layout responsivo que se adapta a diferentes tamanhos de tela.
+
+## Melhorias
+- **First Section**
+  - Adicionei uma animaça ao Titulo: A Melhor Faculdade de Tecnologia 
+  ![FirstSection](./images/first-section.gif)
+- **Footer**
+  - Criei um footer 
+  ![Footer](./images/footer-image.png)
 
 
 ## Autor
