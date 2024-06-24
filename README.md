@@ -34,7 +34,7 @@ A landing page foi projetada para ser responsiva e incluir algumas animações, 
 
 - **ReactJS**: Biblioteca JavaScript para construir interfaces de usuário.
 - **Vite**: Ferramenta de build rápida e leve para projetos modernos de front-end.
-- **SCSS**: Linguagem de extensão do CSS que permite o uso de variáveis, aninhamento e mais.
+- **SCSS**: Uma linguagem de extensão do CSS que oferece recursos avançados como variáveis, aninhamento de seletores, mixins e muito mais, facilitando a escrita e manutenção de estilos complexos.
 - **HTML**: Linguagem de marcação para estruturação da página.
 
 ## Estrutura do Projeto
