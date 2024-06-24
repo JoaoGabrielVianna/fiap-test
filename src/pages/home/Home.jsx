@@ -1,5 +1,5 @@
 // Home.jsx
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 // Componentes importados
 import Header from '../../components/header/Header';
@@ -10,8 +10,29 @@ import CoursesSection from '../../components/courses-section/CoursesSection ';
 import FaqSection from '../../components/faq-section/FaqSection';
 
 import './Home.scss';
+import Footer from '../../components/footer/Footer';
+import TextTyper from '../../components/text-typer/TextTyper';
 
 function Home() {
+
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const progress = `${(scrollPosition / windowHeight) * 100}`;
+      setScrollPosition(progress);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <div className='home-container'>
       <Header />
@@ -20,8 +41,13 @@ function Home() {
       <section>
         <div className="section-wrapper">
           <div className='title'>
-            <h1 className='a-melhor-faculdade typing'>A Melhor Faculdade</h1>
-            <h1 className='typing'>de Tecnologia</h1>
+            <div className="title-wrapper">
+              <TextTyper text='A Melhor Faculdade' className='first' />
+              <TextTyper text='de Tecnologia' delay={2000} className='second' />
+            </div>
+            {/* <h1 className='a-melhor-faculdade typing'>A Melhor Faculdade <div>de Tecnologia</div></h1> */}
+            {/* <h1 className='typing'>de Tecnologia</h1> */}
+
             <div className="about">
               <h1>SOB<br />RE</h1>
             </div>
@@ -36,7 +62,7 @@ function Home() {
       </section>
 
       {/* Seção 3 - Imagem de introdução */}
-      <section>
+      <section className={`${scrollPosition > 14 ? 'is-visible' : ''}`}>
         <img src={Intro} alt="Imagem de Introdução" />
       </section>
 
@@ -59,6 +85,10 @@ function Home() {
       {/* Seção 7 - FAQ */}
       <section>
         <FaqSection />
+      </section>
+
+      <section>
+        <Footer />
       </section>
 
     </div>

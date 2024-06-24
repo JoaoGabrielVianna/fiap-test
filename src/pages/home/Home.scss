@@ -3,32 +3,48 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  gap: 18rem;
 
   section {
+
     // Seção 1: Título Principal - A Melhor Faculdade de Tecnologia
     &:nth-of-type(1) {
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-bottom: -12rem;
 
       .section-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
         .title {
+          z-index: 2;
+          width: 770px;
+
+          display: flex;
+          flex-direction: column;
+
           position: relative;
 
-          h1 {
+          .title-wrapper {
+            display: flex;
+            flex-direction: column;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
+
             font-size: 6.875rem;
             z-index: 2;
             position: relative;
             line-height: 0.8;
 
-            &.a-melhor-faculdade {
-              transform: translateX(2%);
+            .first {
+              transform: translateX(2rem);
             }
 
-            &:nth-child(2) {
-              transform: translateX(-5%);
-            }
           }
 
           .about {
@@ -39,6 +55,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
+            opacity: 0;
+            animation: AboutOpacity 1s forwards;
 
             h1 {
               font-weight: 800;
@@ -57,6 +76,8 @@
 
     // Seção 2: Marquee (Letreiro)
     &:nth-of-type(2) {
+      margin-bottom: -16rem;
+
       h1 {
         font-size: 5.188rem;
       }
@@ -67,15 +88,39 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
 
       img {
         width: 70%;
+
+
+
+      }
+
+      &::before {
+        content: '';
+        width: 70%;
+        height: 100%;
+        position: absolute;
+        // top: 50%;
+        left: 50%;
+        bottom: 0;
+        transition: 1.5s;
+        transform: translate(-50%);
+        background-color: black;
+      }
+
+      &.is-visible {
+        &::before {
+          height: 0%;
+        }
       }
     }
 
     // Seção 4: Ajuste de Posição
     &:nth-of-type(4) {
-      margin-top: -16rem;
+      margin-top: -34rem;
+      margin-bottom: -15rem;
 
       h1 {
         font-size: 9rem;
@@ -85,6 +130,7 @@
     // Seção 5: Animação de Imagens com Scroll de Água
     &:nth-of-type(5) {
       height: 54.188rem;
+
       display: flex;
       align-items: center;
       justify-content: center;
@@ -96,6 +142,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+
     }
 
     // Seção 7: FAQ
@@ -107,8 +154,8 @@
 
   // Estilos para notebook com resolução 1920x1080 (100%)
   @media(min-width: 1920px) {
-    max-width: 1920px;
-   
+    // max-width: 2920px; 
+    // background-color: red;
     section {
       &:nth-of-type(1) {
         height: 1080px;
@@ -139,9 +186,7 @@
         // Estilos específicos para a seção 2
       }
 
-      &:nth-of-type(3) {
-        // height: 70vh;
-      }
+      &:nth-of-type(3) {}
 
       &:nth-of-type(4) {
         // Estilos específicos para a seção 4
@@ -149,15 +194,15 @@
 
       &:nth-of-type(5) {
         height: 70rem;
-        // background-color: red;
+
       }
     }
   }
 
   // Estilos para notebook com resolução 1920x1080 (125%)
   @media (max-width: 1920px) {
-    max-width: 1536px;
-    
+    // max-width: 1536px;
+
     section {
       &:nth-of-type(1) {
         height: 100vh;
@@ -180,21 +225,43 @@
           }
         }
       }
+
+      &:nth-of-type(5) {
+        height: 87vh;
+        margin-top: -6rem;
+
+        img {
+          // opacity: 0.5;
+        }
+      }
     }
   }
 
   // Estilos para dispositivos móveis com largura máxima de 900px
   @media(max-width: 900px) {
+    gap: 8rem;
+
     section {
+
       &:nth-of-type(1) {
-        height: 35rem;
+        height: 30em;
+        margin-bottom: 1rem;
 
         .section-wrapper {
+          padding: 1rem;
+
           .title {
+            .title-wrapper {
+              .first {
+                transform: translateX(1rem);
+              }
+            }
+
             width: 100%;
 
             h1 {
               font-size: 2rem;
+              line-height: 2.2rem;
             }
 
             .about {
@@ -203,6 +270,7 @@
                 transform: translateY(-25%);
                 font-size: 9.375rem;
                 text-align: end;
+                line-height: 8rem;
 
                 br {
                   display: flex;
@@ -214,7 +282,13 @@
       }
 
       &:nth-of-type(2) {
-        // Estilos específicos para a seção 2 em dispositivos móveis
+        padding: 0;
+        margin: 0;
+
+        h1 {
+          font-size: 3rem;
+        }
+
       }
 
       &:nth-of-type(3) {
@@ -230,8 +304,18 @@
       }
 
       &:nth-of-type(6) {
+        height: auto;
+        padding: 1rem;
         padding-top: 3rem;
         align-items: start;
+      }
+
+      &:nth-of-type(7) {
+        padding: 1rem;
+      }
+
+      &:nth-of-type(8) {
+        margin-top: -10rem;
       }
     }
   }
@@ -241,27 +325,27 @@
     width: 100%;
   }
 
-  // Estilos para a barra de rolagem personalizada
-  ::-webkit-scrollbar-thumb {
-    background: red;
-    border-radius: 5px;
+}
+
+
+/* Animação de digitação */
+@keyframes typing {
+  from {
+    width: 0
   }
 
-  ::-webkit-scrollbar-thumb:hover {
-    background: darkred;
+  to {
+    width: 100%
+  }
+}
+
+
+@keyframes AboutOpacity {
+  from {
+    opacity: 0;
   }
 
-  /* Estilizar o scrollbar no Firefox */
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: red;
-    border-radius: 5px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: darkred;
+  to {
+    opacity: 1;
   }
 }
