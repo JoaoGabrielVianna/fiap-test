@@ -1,16 +1,13 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
-export default function TextTyper({
-  text = "",
-  interval = 100,
-  Markup = "span"
-}) {
+const TextTyper = ({ text = "", interval = 100, delay = 0, Markup = "span", className }) => {
   const [typedText, setTypedText] = useState("");
 
-  const typingRender = (text, updater, interval, setter, value) => {
+  const typingRender = (text, updater, interval, delay) => {
     let localTypingIndex = 0;
     let localTyping = "";
-    if (text) {
+    
+    setTimeout(() => {
       let printer = setInterval(() => {
         if (localTypingIndex < text.length) {
           updater((localTyping += text[localTypingIndex]));
@@ -19,28 +16,20 @@ export default function TextTyper({
           localTypingIndex = 0;
           localTyping = "";
           clearInterval(printer);
-          //  return setter && setter(value)
         }
       }, interval);
-    }
+    }, delay);
   };
-  useEffect(() => {
-    typingRender(text, setTypedText, interval);
-  }, [text, interval]);
 
-  //   const [showPrompt, setShowPrompt] = useState(true);
-  // useEffect(() => {
-  //     // Change the state every second or the time given by User.
-  //     const interval = setInterval(() => {
-  //       setShowPrompt((showPrompt) => !showPrompt);
-  //     }, 400);
-  //     return () => clearInterval(interval);
-  //   }, []);
+  useEffect(() => {
+    typingRender(text, setTypedText, interval, delay);
+  }, [text, interval, delay]);
 
   return (
     <Markup >
-      <h1 className="typing">{typedText}</h1>
-      {/* <span>{showPrompt ? '_' : ' '}</span> */}
+      <h1 className={`${className} typing`}>{typedText}</h1>
     </Markup>
   );
-}
+};
+
+export default TextTyper;
