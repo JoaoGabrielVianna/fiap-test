@@ -5,6 +5,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 // Tela(s) | Router(s)
 import App from './routers/app/App'
 import Home from './pages/home/Home'
+import Error from './pages/error/Error'
 
 import './index.scss'
 import './components/Styles.scss'
@@ -12,11 +13,11 @@ import './components/Styles.scss'
 const router = createBrowserRouter([{
   path: '/',
   element: <App />,
-  errorElement: '', //Diferencial
+  errorElement: <Error />,
   children: [
     {
       path: '/',
-      element: <Home/>
+      element: <Home />
     }
   ]
 }])
