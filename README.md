@@ -126,7 +126,7 @@ A landing page inclui um cabeçalho animado e é estilizada com uma fonte person
 
 ## Melhorias
 - **First Section**
-  - Adicionei uma animaça ao Titulo: A Melhor Faculdade de Tecnologia 
+  - Adicionei uma animação ao Título: A Melhor Faculdade de Tecnologia 
   ![FirstSection](./images/first-section.gif)
 - **Footer**
   - Criei um footer 
@@ -135,10 +135,9 @@ A landing page inclui um cabeçalho animado e é estilizada com uma fonte person
   - Criei uma NavBar para melhorar a navegação
   ![Navbar](./images/navbar.gif)
 - **404 Page**
-  - Criei uma pagina de erro
-<br/>
+  - Criei uma página de erro
 > [!WARNING]  
-> A tela de erro está funcionando apenas localmente. Isso ocorre devido à falta de configuração no site hospedado.
+> A tela de erro está funcionando apenas localmente (localhost). Isso ocorre devido à falta de configuração no site hospedado.
 <br/>
 
   ![ErrorPage](./images/error-page.png)
