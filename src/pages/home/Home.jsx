@@ -75,7 +75,7 @@ const TitleSection = () => (
   <div className="section-wrapper">
     <div className='title'>
       <div className="title-wrapper">
-        <TextTyper text='A Melhor Faculdade' className='first' />
+        <TextTyper text='A Melhor Faculdade' className='first' space />
         <TextTyper text='de Tecnologia' delay={2000} className='second' />
       </div>
       <div className="about">

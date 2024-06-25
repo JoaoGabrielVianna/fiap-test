@@ -3,27 +3,27 @@ import React, { useState, useEffect } from "react";
 const TextTyper = ({ text = "", interval = 100, delay = 0, Markup = "span", className }) => {
   const [typedText, setTypedText] = useState("");
 
-  useEffect(() => {
-    let typingTimer;
-    let typingIndex = 0;
-    let typing = "";
+  const typingRender = (text, updater, interval, delay) => {
+    let localTypingIndex = 0;
+    let localTyping = "";
 
-    const typingAnimation = () => {
-      typingTimer = setTimeout(() => {
-        typing += text[typingIndex];
-        setTypedText(typing);
-        typingIndex++;
-
-        if (typingIndex < text.length) {
-          typingAnimation();
+    setTimeout(() => {
+      let printer = setInterval(() => {
+        if (localTypingIndex < text.length) {
+          updater((localTyping += text[localTypingIndex]));
+          localTypingIndex += 1;
+        } else {
+          localTypingIndex = 0;
+          localTyping = "";
+          clearInterval(printer);
         }
       }, interval);
-    };
+    }, delay);
+  };
 
-    typingAnimation();
-
-    return () => clearTimeout(typingTimer);
-  }, [text, interval]);
+  useEffect(() => {
+    typingRender(text, setTypedText, interval, delay);
+  }, [text, interval, delay]);
 
   return (
     <Markup>
