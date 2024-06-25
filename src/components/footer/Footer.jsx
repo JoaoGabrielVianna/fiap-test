@@ -1,30 +1,36 @@
-import React from 'react'
-
-import FiapLogo from '../../assets/svgs/logo-fiap.svg'
+import React from 'react';
+import FiapLogo from '../../assets/svgs/logo-fiap.svg';
 
 const Footer = () => {
   return (
     <footer>
       <header>
-        <img src={FiapLogo} alt="" />
+        <img src={FiapLogo} alt="Logo FIAP" />
         <div>
           <h1>A FIAP</h1>
-          <p>Fotos</p>
-          <p>Vídeos</p>
-          <p>Prêmios e reconhecimentos</p>
-          <p>Parcerias estratégicas</p>
+          <FooterLinkList
+            links={[
+              'Fotos',
+              'Vídeos',
+              'Prêmios e reconhecimentos',
+              'Parcerias estratégicas',
+            ]}
+          />
         </div>
         <div>
           <h1>LINKS ÚTEIS</h1>
-          <p>Fale conosco</p>
-          <p>Trabalhe conosco</p>
-          <p>Política de privacidade</p>
-          <p>Cerencie seus Cookies</p>
+          <FooterLinkList
+            links={[
+              'Fale conosco',
+              'Trabalhe conosco',
+              'Política de privacidade',
+              'Gerencie seus Cookies',
+            ]}
+          />
         </div>
         <div>
           <h1>UNIDADES</h1>
-          <p>Aclimação</p>
-          <p>Paulista</p>
+          <FooterLinkList links={['Aclimação', 'Paulista']} />
         </div>
       </header>
       <div className="lets-rock-the-future">
@@ -35,7 +41,15 @@ const Footer = () => {
         <p>Todos os direitos reservados</p>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+const FooterLinkList = ({ links }) => (
+  <>
+    {links.map((link, index) => (
+      <p key={index}>{link}</p>
+    ))}
+  </>
+);
+
+export default Footer;

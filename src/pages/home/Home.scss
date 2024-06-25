@@ -6,7 +6,6 @@
   gap: 18rem;
 
   section {
-
     // Seção 1: Título Principal - A Melhor Faculdade de Tecnologia
     &:nth-of-type(1) {
       width: 100%;
@@ -23,10 +22,8 @@
         .title {
           z-index: 2;
           width: 770px;
-
           display: flex;
           flex-direction: column;
-
           position: relative;
 
           .title-wrapper {
@@ -35,7 +32,6 @@
             overflow-wrap: break-word;
             word-wrap: break-word;
             hyphens: auto;
-
             font-size: 6.875rem;
             z-index: 2;
             position: relative;
@@ -44,7 +40,6 @@
             .first {
               transform: translateX(2rem);
             }
-
           }
 
           .about {
@@ -55,7 +50,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-
             opacity: 0;
             animation: AboutOpacity 1s forwards;
 
@@ -92,9 +86,6 @@
 
       img {
         width: 70%;
-
-
-
       }
 
       &::before {
@@ -102,7 +93,6 @@
         width: 70%;
         height: 100%;
         position: absolute;
-        // top: 50%;
         left: 50%;
         bottom: 0;
         transition: 1.5s;
@@ -110,10 +100,8 @@
         background-color: black;
       }
 
-      &.is-visible {
-        &::before {
-          height: 0%;
-        }
+      &.is-visible::before {
+        height: 0%;
       }
     }
 
@@ -130,7 +118,6 @@
     // Seção 5: Animação de Imagens com Scroll de Água
     &:nth-of-type(5) {
       height: 54.188rem;
-
       display: flex;
       align-items: center;
       justify-content: center;
@@ -142,7 +129,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-
     }
 
     // Seção 7: FAQ
@@ -153,9 +139,7 @@
   }
 
   // Estilos para notebook com resolução 1920x1080 (100%)
-  @media(min-width: 1920px) {
-    // max-width: 2920px; 
-    // background-color: red;
+  @media (min-width: 1920px) {
     section {
       &:nth-of-type(1) {
         height: 1080px;
@@ -182,27 +166,14 @@
         }
       }
 
-      &:nth-of-type(2) {
-        // Estilos específicos para a seção 2
-      }
-
-      &:nth-of-type(3) {}
-
-      &:nth-of-type(4) {
-        // Estilos específicos para a seção 4
-      }
-
       &:nth-of-type(5) {
         height: 70rem;
-
       }
     }
   }
 
   // Estilos para notebook com resolução 1920x1080 (125%)
   @media (max-width: 1920px) {
-    // max-width: 1536px;
-
     section {
       &:nth-of-type(1) {
         height: 100vh;
@@ -229,20 +200,15 @@
       &:nth-of-type(5) {
         height: 87vh;
         margin-top: -6rem;
-
-        img {
-          // opacity: 0.5;
-        }
       }
     }
   }
 
   // Estilos para dispositivos móveis com largura máxima de 900px
-  @media(max-width: 900px) {
+  @media (max-width: 900px) {
     gap: 8rem;
 
     section {
-
       &:nth-of-type(1) {
         height: 30em;
         margin-bottom: 1rem;
@@ -288,17 +254,10 @@
         h1 {
           font-size: 3rem;
         }
-
       }
 
-      &:nth-of-type(3) {
-        display: none;
-      }
-
-      &:nth-of-type(4) {
-        display: none;
-      }
-
+      &:nth-of-type(3),
+      &:nth-of-type(4),
       &:nth-of-type(5) {
         display: none;
       }
@@ -324,22 +283,20 @@
   .water {
     width: 100%;
   }
-
 }
 
-
-/* Animação de digitação */
+// Animação de digitação
 @keyframes typing {
   from {
-    width: 0
+    width: 0;
   }
 
   to {
-    width: 100%
+    width: 100%;
   }
 }
 
-
+// Animação de opacidade para a seção "about"
 @keyframes AboutOpacity {
   from {
     opacity: 0;

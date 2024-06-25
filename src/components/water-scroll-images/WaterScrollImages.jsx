@@ -15,16 +15,19 @@ const WaterScrollImages = ({ className = '', speed = 1.5 }) => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    const throttledScroll = () => {
+      requestAnimationFrame(handleScroll);
+    };
+
+    window.addEventListener('scroll', throttledScroll);
+
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', throttledScroll);
     };
   }, []);
 
   return (
-    <div>
-      <img src={images[currentImageIndex]} className={className} />
-    </div>
+    <img src={images[currentImageIndex]} className={className} alt="Scrolling Water Images" />
   );
 };
 

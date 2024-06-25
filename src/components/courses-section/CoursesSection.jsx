@@ -1,21 +1,8 @@
-// CoursesSection.jsx
 import React, { useState } from 'react';
 
 const CoursesSection = () => {
-  const [isActive, setActiveState] = useState(0);
-  const [activeCategory, setActiveCategory] = useState(null);
-
-  const handleItemClick = (e) => {
-    setActiveState(e)
-  }
-
-  const toggleAccordion = (index) => {
-    if (activeCategory === index) {
-      setActiveCategory(null);
-    } else {
-      setActiveCategory(index);
-    }
-  };
+  const [activeCategory, setActiveCategory] = useState(0);
+  const [activeAccordion, setActiveAccordion] = useState(null);
 
   const categories = [
     {
@@ -26,7 +13,7 @@ const CoursesSection = () => {
         { id: 1, text: 'Creating Dashboards for BI', modos: ['REMOTO', 'LIVE'] },
         { id: 2, text: 'Big Data Science - Machine Learning & Data Mining', modos: ['REMOTO', 'LIVE', 'MULTIMÍDIA'] },
         { id: 3, text: 'Storytelling', modos: ['REMOTO', 'LIVE'] },
-      ]
+      ],
     },
     {
       id: 1,
@@ -36,7 +23,7 @@ const CoursesSection = () => {
         { id: 1, text: 'UX Writing', modos: ['LIVE'] },
         { id: 2, text: 'Storytelling para Negócios', modos: ['LIVE'] },
         { id: 3, text: 'Chatbots', modos: ['LIVE'] },
-      ]
+      ],
     },
     {
       id: 2,
@@ -46,13 +33,20 @@ const CoursesSection = () => {
         { id: 1, text: 'DPO Data Protection Officer', modos: ['LIVE'] },
         { id: 2, text: 'IT Business Partner', modos: ['LIVE'] },
         { id: 3, text: 'Perícia Forense Computacional', modos: ['LIVE'] },
-      ]
-    }
+      ],
+    },
   ];
 
+  const handleCategoryClick = (categoryIndex) => {
+    setActiveCategory(categoryIndex);
+  };
+
+  const handleAccordionToggle = (index) => {
+    setActiveAccordion(activeAccordion === index ? null : index);
+  };
 
   return (
-    <div className='courses-section-container'>
+    <div className="courses-section-container">
       <header>
         <div>
           <h1>Cursos</h1>
@@ -60,24 +54,24 @@ const CoursesSection = () => {
         </div>
         <nav>
           <ul>
-            <li className={isActive === 0 ? 'is-active' : ''} onClick={() => handleItemClick(0)}>
-              Tecnologia
-            </li>
-
-            <li className={isActive === 1 ? 'is-active' : ''} onClick={() => handleItemClick(1)}>
-              Inovação
-            </li>
-            <li className={isActive === 2 ? 'is-active' : ''} onClick={() => handleItemClick(2)}>
-              Negócios
-            </li>
+            {categories.map((category, index) => (
+              <li
+                key={category.id}
+                className={activeCategory === index ? 'is-active' : ''}
+                onClick={() => handleCategoryClick(index)}
+              >
+                {category.title}
+              </li>
+            ))}
           </ul>
         </nav>
       </header>
+
       <div className="courses-section-content">
         {categories.map((category, index) => (
           <div
             key={category.id}
-            className={`categories ${isActive === index ? 'visible' : ''}`}
+            className={`categories ${activeCategory === index ? 'visible' : ''}`}
           >
             <h1>{category.title}</h1>
             {category.descriptions.map((desc) => (
@@ -95,11 +89,12 @@ const CoursesSection = () => {
           <div key={category.id} className="accordion-item">
             <header>
               <h1>{category.title}</h1>
-              <button onClick={() => toggleAccordion(index)} className={activeCategory === index ? 'minus' : 'plus'}>
-
-              </button>
+              <button
+                onClick={() => handleAccordionToggle(index)}
+                className={activeAccordion === index ? 'minus' : 'plus'}
+              />
             </header>
-            {activeCategory === index && (
+            {activeAccordion === index && (
               <div className="accordion-content">
                 {category.descriptions.map((desc) => (
                   <div key={desc.id} className="accordion-description">

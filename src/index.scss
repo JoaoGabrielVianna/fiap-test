@@ -4,7 +4,6 @@
   // Estilos
   --header-background: rgba(32, 33, 33, 1);
   --body-background: rgba(0, 0, 0, 1);
-  // --body-background: #4E4E4E; // Teste 
   --color-pink: rgba(237, 20, 91, 1);
   --color-white: rgba(255, 255, 255, 1);
 
@@ -19,18 +18,13 @@
 body {
   width: 100vw;
   height: 100vh;
-
   margin: 0 auto;
-
   font-family: 'Gotham HTF', sans-serif;
   font-weight: 500;
   background-color: var(--body-background);
-
   color: var(--color-white);
 
   h1 {
     font-weight: 400;
   }
-
-
 }

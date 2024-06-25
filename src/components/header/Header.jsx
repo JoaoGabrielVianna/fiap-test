@@ -1,16 +1,8 @@
-// Header.jsx
-import React, { useEffect, useState } from 'react'
-
-// Svg
-import FiapLogo from '../../assets/svgs/logo-fiap.svg'
-
+import React, { useEffect, useState } from 'react';
+import FiapLogo from '../../assets/svgs/logo-fiap.svg';
 
 const Header = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
-
-  const borderStyle = {
-    width: scrollPosition
-  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,16 +19,18 @@ const Header = () => {
     };
   }, []);
 
-
+  const borderStyle = {
+    width: scrollPosition,
+  };
 
   return (
-    <div className='header-container'>
+    <header className="header-container">
       <div className="header-wrapper">
-        <img src={FiapLogo} alt="" />
+        <img src={FiapLogo} alt="Logo FIAP" />
       </div>
-      <div className="border" style={borderStyle} />
-    </div>
-  )
-}
+      <div className="border" style={borderStyle}></div>
+    </header>
+  );
+};
 
 export default Header;
