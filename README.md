@@ -136,9 +136,8 @@ A landing page inclui um cabeçalho animado e é estilizada com uma fonte person
   ![Navbar](./images/navbar.gif)
 - **404 Page**
   - Criei uma pagina de erro
-<br/>
 > [!WARNING]  
-> A tela de erro está funcionando apenas localmente. Isso ocorre devido à falta de configuração no site hospedado.
+> A tela de erro está funcionando apenas localmente (localhost). Isso ocorre devido à falta de configuração no site hospedado.
 <br/>
 
   ![ErrorPage](./images/error-page.png)
