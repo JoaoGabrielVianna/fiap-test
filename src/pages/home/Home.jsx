@@ -9,6 +9,7 @@ import FaqSection from '../../components/faq-section/FaqSection';
 import Footer from '../../components/footer/Footer';
 import TextTyper from '../../components/text-typer/TextTyper';
 import './Home.scss';
+import Navbar from '../../components/navbar/Navbar';
 
 const Home = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -31,17 +32,18 @@ const Home = () => {
   return (
     <div className='home-container'>
       <Header />
+      <Navbar/>
 
-      <section>
+      <section id='home'>
         <TitleSection />
       </section>
 
-      <section>
+      <section id='intro'>
         <Marquee text='CURSOS E IMERSÕES. UMA NOVA CULTURA DE MERCADO.' />
         <Marquee text='TECNOLOGIA, INOVAÇÃO E NEGÓCIOS. PRESENTE E FUTURO.' direction='ltr' />
-      </section>
+      </section >
 
-      <section className={scrollProgress > 14 ? 'is-visible' : ''}>
+      <section  className={scrollProgress > 14 ? 'is-visible' : ''}>
         <img src={IntroImage} alt="Imagem de Introdução" />
       </section>
 
@@ -54,15 +56,15 @@ const Home = () => {
         <WaterScrollImages className='water' />
       </section>
 
-      <section>
+      <section id='cursos'>
         <CoursesSection />
       </section>
 
-      <section>
+      <section id='faq'>
         <FaqSection />
       </section>
 
-      <section>
+      <section id='footer'>
         <Footer />
       </section>
     </div>

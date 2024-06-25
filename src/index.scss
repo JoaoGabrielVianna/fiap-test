@@ -9,13 +9,16 @@
 
   --font-pt-sans: "PT Sans", sans-serif;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
+  
   width: 100vw;
   height: 100vh;
   margin: 0 auto;
@@ -23,8 +26,22 @@ body {
   font-weight: 500;
   background-color: var(--body-background);
   color: var(--color-white);
-
+  overflow-x: hidden;
   h1 {
     font-weight: 400;
   }
+}
+
+body::-webkit-scrollbar {
+  width: 16px;
+}
+
+body::-webkit-scrollbar-track {
+  background: lightgrey;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--color-pink);
+  border-radius: 8px;
+  border: 4px solid lightgrey;
 }
