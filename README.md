@@ -131,7 +131,17 @@ A landing page inclui um cabeçalho animado e é estilizada com uma fonte person
 - **Footer**
   - Criei um footer 
   ![Footer](./images/footer-image.png)
+- **Navbar**
+  - Criei uma NavBar para melhorar a navegação
+  ![Navbar](./images/navbar.gif)
+- **404 Page**
+  - Criei uma pagina de erro
+<br/>
+> [!WARNING]  
+> A tela de erro está funcionando apenas localmente. Isso ocorre devido à falta de configuração no site hospedado.
+<br/>
 
+  ![ErrorPage](./images/error-page.png)
 
 ## Autor
 
