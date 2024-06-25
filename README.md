@@ -12,6 +12,11 @@ Este projeto é uma landing page desenvolvida como parte da prova para a posiç�
 - [Funcionalidades](#funcionalidades)
 - [Melhorias](#melhorias)
 - [Autor](#autor)
+<br/>
+
+> [!WARNING]  
+> A animação da água no site [joaogabrielvianna-fiap-test.netlgy.com](https://joaogabrielvianna-fiap-test.netlify.app/) está apresentando travamentos, enquanto localmente (localhost) ela roda suavemente ao rolar a página.
+<br/>
 
 ## Visão Geral
 
@@ -90,16 +95,10 @@ Prova Fiap/
 └── README.md
 
 
-## Instalação
-
-Siga os passos abaixo para rodar o projeto localmente:
-
-- **Clone o repositório:**:
-```bash
-git clone https://github.com/JoaoGabrielVianna/fiap-test.git
-cd fiap-test
 ```
 
+
+## Instalação
 - **Instale as dependências:**
 ```bash
 npm install
