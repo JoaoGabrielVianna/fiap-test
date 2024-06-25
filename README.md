@@ -12,7 +12,6 @@ Este projeto é uma landing page desenvolvida como parte da prova para a posiç�
 - [Funcionalidades](#funcionalidades)
 - [Melhorias](#melhorias)
 - [Autor](#autor)
-- 
 <br/>
 
 > [!WARNING]  
